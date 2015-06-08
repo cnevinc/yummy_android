@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/src/main/res/values-land/integers.xml -->
+    <eat-comment/>
+    <integer name="num_columns">2</integer>
+</resources>
