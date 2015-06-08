@@ -1,0 +1,16 @@
+INDEX VERSION 1.126+F:\DOZO\Android\workspace_ymmy\.metadata\.plugins\org.eclipse.jdt.core
+4008537217.index
+1333862535.index
+3163609490.index
+1713576277.index
+669281814.index
+2893665001.index
+3480546782.index
+3970590673.index
+4112757022.index
+1151816332.index
+2563543836.index
+909076010.index
+1002098335.index
+1526969771.index
+649826307.index

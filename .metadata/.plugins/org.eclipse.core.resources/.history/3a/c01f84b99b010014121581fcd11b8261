@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Lock Options" >
+        <EditTextPreference
+            android:inputType="number"
+            android:key="password"
+            android:summary="Edit the unlock password"
+            android:title="Edit Password" />
+
+        <Preference
+            android:key="gesture"
+            android:summary="Edit the unlock gesture"
+            android:title="Setup Gesture" />
+
+        <CheckBoxPreference
+            android:key="relock_policy"
+            android:summaryOff="Require password everytime the blocked app is launched."
+            android:summaryOn="Password is not required after unlocking for a period of time"
+            android:title="Relock Policy" />
+
+        <ListPreference
+            android:dependency="relock_policy"
+            android:dialogTitle="Relock Timeout"
+            android:entries="@array/relock_timeout_entries"
+            android:entryValues="@array/relock_timeout_values"
+            android:key="relock_timeout"
+            android:summary="Minutes of time before the app is relocked"
+            android:title="Relock timeout" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Run Options" >
+        <CheckBoxPreference
+            android:key="service_enabled"
+            android:summaryOff="Check to start AirLocker"
+            android:summaryOn="AirLocker is running"
+            android:title="Start AirLocker Now" />
+        <CheckBoxPreference
+            android:dependency="service_enabled"
+            android:key="start_service_after_boot"
+            android:summaryOff="Check to started AirLocker after boot"
+            android:summaryOn="Auto-run enabled"
+            android:title="Auto Start" />
+        <CheckBoxPreference
+            android:key="weekly_report"
+            android:summaryOff="Check to receive AirLocker history."
+            android:summaryOn="AirLocker history enabled."
+            android:title="Weekly Report" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="About" >
+        <Preference
+            android:key="version"
+            android:selectable="false"
+            android:summary="@string/ga_app_ver"
+            android:title="Version Info" />
+        <Preference
+            android:key="chocolabs"
+            android:summary="Check out our latest App!"
+            android:title="Chocolabs Selected" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://play.google.com/store/apps/developer?id=CHOCOLABS" />
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
