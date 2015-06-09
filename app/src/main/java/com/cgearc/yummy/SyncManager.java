@@ -2,6 +2,7 @@ package com.cgearc.yummy;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -27,6 +28,7 @@ import com.cgearc.yummy.api.search.ApiSearchResult;
 import retrofit.RestAdapter;
 import retrofit.http.GET;
 import retrofit.http.Query;
+import retrofit.http.QueryMap;
 
 public class SyncManager {
 	private static final String TAG = "nevin";
@@ -111,8 +113,8 @@ public class SyncManager {
 	}
 
 	public interface SearchArticleService {
-		@GET("/blog/articles/search?category=27")
-		List<ApiSearchResult> listRepos(@Query("key") String key);
+		@GET("/blog/articles/search")
+		List<ApiSearchResult> listRepos(@QueryMap HashMap<String, String> options);
 	}
 	public void searchArticlesByKeyword(final SyncObserver adapter, final  String keyword, final View view){
 
@@ -126,8 +128,10 @@ public class SyncManager {
 						.setEndpoint("http://emma.pixnet.cc")
 						.build();
 				SearchArticleService service = restAdapter.create(SearchArticleService.class);
-
-				List<ApiSearchResult> repos = service.listRepos(keyword);
+				HashMap<String, String> options = new HashMap<String, String>();
+				options.put("key",keyword);
+				options.put("category","27");
+				List<ApiSearchResult> repos = service.listRepos(options);
 				for (int i = 0; i < repos.size(); i++) {
 					ApiSearchResult result = repos.get(i);
 					for (ApiArticle a : result.getArticles()){
