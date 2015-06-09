@@ -232,7 +232,7 @@ public class SyncManager {
  
 	public void getHotArticleFromPixnet(final SyncObserver adapter, final View view){
 
-		String api_url = "http://emma.pixnet.cc/mainpage/blog/categories/hot/27?page=1&count="+Setting.PER_PAGE;
+		String api_url = "http://emma.pixnet.cc/mainpage/blog/categories/hot/27?client_id=f3c1ccd6847f28826ce63ae59913d73d&page=1&count="+Setting.PER_PAGE;
 
 		JsonArrayRequest jsonRequest = new JsonArrayRequest(
 				api_url, new Response.Listener<JSONArray>() {
@@ -286,7 +286,7 @@ public class SyncManager {
 	}
 	public void getOneArticlesFromPixnet(final SyncObserver adapter,final String article_id, String user_name, final View view) {
 		// Update User Table
-		String api_url = "http://emma.pixnet.cc/blog/articles/"+article_id+"?user="+user_name;
+		String api_url = "http://emma.pixnet.cc/blog/articles/"+article_id+"?client_id=f3c1ccd6847f28826ce63ae59913d73d&user="+user_name;
 		JsonObjectRequest jsonRequest = new JsonObjectRequest(Method.GET,
 				api_url, null, new Response.Listener<JSONObject>() {
 					@Override

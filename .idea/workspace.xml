@@ -5,18 +5,8 @@
       <config />
     </shared>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="1d8e5da6-1761-4ab3-b9c3-9c5f0fcbd5f4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/cgearc/yummy/SyncManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
@@ -88,8 +78,8 @@
       <file leaf-file-name="SyncManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cgearc/yummy/SyncManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.064935066">
-              <caret line="135" column="42" selection-start-line="135" selection-start-column="42" selection-end-line="135" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="152" column="30" selection-start-line="152" selection-start-column="11" selection-end-line="152" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4031#4899#0" expanded="true" />
@@ -1982,8 +1972,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cgearc/yummy/SyncManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.064935066">
-          <caret line="135" column="42" selection-start-line="135" selection-start-column="42" selection-end-line="135" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="152" column="30" selection-start-line="152" selection-start-column="11" selection-end-line="152" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4031#4899#0" expanded="true" />
