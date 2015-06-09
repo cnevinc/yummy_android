@@ -2,40 +2,33 @@ package com.cgearc.yummy;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URLEncoder;
-import java.text.DecimalFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.accounts.Account;
-import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.View;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.Request.Method;
 import com.android.volley.util.JsonArrayRequest;
 import com.android.volley.util.JsonObjectRequest;
-import com.android.volley.util.StringRequest;
 import com.cgearc.yummy.DaoMaster.DevOpenHelper;
 import com.cgearc.yummy.Frg_RecipeList.ArticleAdapter;
-import com.cgearc.yummy.Frg_RecipeList.SearchCompletedListener;
+import com.cgearc.yummy.api.search.ApiArticle;
+import com.cgearc.yummy.api.search.ApiSearchResult;
+
+import retrofit.RestAdapter;
+import retrofit.http.GET;
+import retrofit.http.Query;
+import retrofit.http.QueryMap;
 
 public class SyncManager {
 	private static final String TAG = "nevin";
@@ -100,7 +93,7 @@ public class SyncManager {
 			Setting.CURRENT_PAGE = content.getInt("page");
 			
 			// TODO: should not touch activity resource here
-			// mActivity.getActionBar().setSubtitle(formatter.format(Setting.TOTAL_ROWS)+ "­Óµ²ªG");
+			// mActivity.getActionBar().setSubtitle(formatter.format(Setting.TOTAL_ROWS)+ "ï¿½Óµï¿½ï¿½G");
 			for (int i = 0; i < entries.length(); i++) {
 
 				JSONObject entry = entries.getJSONObject(i);
@@ -118,50 +111,91 @@ public class SyncManager {
 			Log.v(TAG,e.toString());
         } 
 	}
-	public void searchArticlesByKeyword(final SyncObserver adapter, String keyword, final View view){
-		Log.d(TAG,"----getArticlesByKeyword----");
-		Setting.CURRENT_PAGE++;
-		String api_url = "http://emma.pixnet.cc/blog/articles/search?category=27&key="
-				+ URLEncoder.encode(keyword+" ­¹ÃÐ")+"&per_page="+Setting.PER_PAGE + "&page="+Setting.CURRENT_PAGE;
-		JsonObjectRequest jsonRequest = new JsonObjectRequest(Method.GET,
-				api_url, null, new Response.Listener<JSONObject>() {
-					@Override
-					public void onResponse(JSONObject response) {
-						
-						try {
 
-							JSONArray entries = response.getJSONArray("articles");
-							// Describe the data set that we are dealing with
-							Setting.TOTAL_ROWS = response.getInt("total");
-							Setting.PER_PAGE = response.getInt("per_page");
-							Setting.CURRENT_PAGE = response.getInt("page");
-							
-							// TODO: should not touch activity resource here
-//							mActivity.getActionBar().setSubtitle(formatter.format(Setting.TOTAL_ROWS)+ "­Óµ²ªG");
-							for (int i = 0; i < entries.length(); i++) {
+	public interface SearchArticleService {
+		@GET("/blog/articles/search")
+		List<ApiSearchResult> listRepos(@QueryMap HashMap<String, String> options);
+	}
+	public void searchArticlesByKeyword(final SyncObserver adapter, final  String keyword, final View view){
 
-								JSONObject entry = entries.getJSONObject(i);
-								getOneArticlesFromPixnet(
-										adapter,
-										entry.getString("id"),
-										entry.getJSONObject("user").getString("name"),
-										view);
-							}
-						} catch (JSONException e) {
-							showErrorDialog(e);
-						} catch (NumberFormatException e) {
-							showErrorDialog(e);
-						}
+
+
+		new Thread(new Runnable(){
+			@Override
+			public void run() {
+
+				RestAdapter restAdapter = new RestAdapter.Builder()
+						.setEndpoint("http://emma.pixnet.cc")
+						.setLogLevel(RestAdapter.LogLevel.FULL)
+						.build();
+				SearchArticleService service = restAdapter.create(SearchArticleService.class);
+				HashMap<String, String> options = new HashMap<String, String>();
+				options.put("key",keyword);
+				options.put("category","27");
+				options.put("client_id","f3c1ccd6847f28826ce63ae59913d73d");
+				options.put("per_page","10");
+
+				List<ApiSearchResult> repos = service.listRepos(options);
+				for (int i = 0; i < repos.size(); i++) {
+					ApiSearchResult result = repos.get(i);
+					for (ApiArticle a : result.getArticles()){
+						getOneArticlesFromPixnet(
+								adapter,
+								a.getId(),
+								a.getUser().getName(),
+								view);
 					}
-				},new Response.ErrorListener() {
-					@Override
-					public void onErrorResponse(VolleyError error) {
-						view.setVisibility(View.GONE);
-						Log.e(TAG, "searchArticlesByKeyword :" + error.toString());
-						showErrorDialog(error);
-					}
-				});
-			MyVolley.getRequestQueue().add(jsonRequest);
+
+				}
+			}
+		}).start();
+
+		// http://emma.pixnet.cc/blog/articles/search?category=27&key={keyword}&per_page=80
+
+
+//		Log.d(TAG,"----getArticlesByKeyword----");
+//		Setting.CURRENT_PAGE++;
+//		String api_url = "http://emma.pixnet.cc/blog/articles/search?category=27&key="
+//				+ URLEncoder.encode(keyword+"")+"&per_page="+Setting.PER_PAGE + "&page="+Setting.CURRENT_PAGE;
+//		JsonObjectRequest jsonRequest = new JsonObjectRequest(Method.GET,
+//				api_url, null, new Response.Listener<JSONObject>() {
+//					@Override
+//					public void onResponse(JSONObject response) {
+//
+//						try {
+//
+//							JSONArray entries = response.getJSONArray("articles");
+//							// Describe the data set that we are dealing with
+//							Setting.TOTAL_ROWS = response.getInt("total");
+//							Setting.PER_PAGE = response.getInt("per_page");
+//							Setting.CURRENT_PAGE = response.getInt("page");
+//
+//							// TODO: should not touch activity resource here
+////							mActivity.getActionBar().setSubtitle(formatter.format(Setting.TOTAL_ROWS)+ "ï¿½Óµï¿½ï¿½G");
+//							for (int i = 0; i < entries.length(); i++) {
+//
+//								JSONObject entry = entries.getJSONObject(i);
+//								getOneArticlesFromPixnet(
+//										adapter,
+//										entry.getString("id"),
+//										entry.getJSONObject("user").getString("name"),
+//										view);
+//							}
+//						} catch (JSONException e) {
+//							showErrorDialog(e);
+//						} catch (NumberFormatException e) {
+//							showErrorDialog(e);
+//						}
+//					}
+//				},new Response.ErrorListener() {
+//					@Override
+//					public void onErrorResponse(VolleyError error) {
+//						view.setVisibility(View.GONE);
+//						Log.e(TAG, "searchArticlesByKeyword :" + error.toString());
+//						showErrorDialog(error);
+//					}
+//				});
+//			MyVolley.getRequestQueue().add(jsonRequest);
 		}
 
 	public void getHotArticleFromCDN(final SyncObserver adapter, final View view) {
@@ -198,7 +232,7 @@ public class SyncManager {
  
 	public void getHotArticleFromPixnet(final SyncObserver adapter, final View view){
 
-		String api_url = "http://emma.pixnet.cc/mainpage/blog/categories/hot/27?page=1&count="+Setting.PER_PAGE;
+		String api_url = "http://emma.pixnet.cc/mainpage/blog/categories/hot/27?client_id=f3c1ccd6847f28826ce63ae59913d73d&page=1&count="+Setting.PER_PAGE;
 
 		JsonArrayRequest jsonRequest = new JsonArrayRequest(
 				api_url, new Response.Listener<JSONArray>() {
@@ -252,7 +286,7 @@ public class SyncManager {
 	}
 	public void getOneArticlesFromPixnet(final SyncObserver adapter,final String article_id, String user_name, final View view) {
 		// Update User Table
-		String api_url = "http://emma.pixnet.cc/blog/articles/"+article_id+"?user="+user_name;
+		String api_url = "http://emma.pixnet.cc/blog/articles/"+article_id+"?client_id=f3c1ccd6847f28826ce63ae59913d73d&user="+user_name;
 		JsonObjectRequest jsonRequest = new JsonObjectRequest(Method.GET,
 				api_url, null, new Response.Listener<JSONObject>() {
 					@Override
