@@ -126,11 +126,15 @@ public class SyncManager {
 
 				RestAdapter restAdapter = new RestAdapter.Builder()
 						.setEndpoint("http://emma.pixnet.cc")
+						.setLogLevel(RestAdapter.LogLevel.FULL)
 						.build();
 				SearchArticleService service = restAdapter.create(SearchArticleService.class);
 				HashMap<String, String> options = new HashMap<String, String>();
 				options.put("key",keyword);
 				options.put("category","27");
+				options.put("client_id","f3c1ccd6847f28826ce63ae59913d73d");
+				options.put("per_page","10");
+
 				List<ApiSearchResult> repos = service.listRepos(options);
 				for (int i = 0; i < repos.size(); i++) {
 					ApiSearchResult result = repos.get(i);
