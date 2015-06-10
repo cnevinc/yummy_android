@@ -7,10 +7,10 @@ A personal interest/project.
 3. Using AndroidSlidingUpPanel library https://github.com/umano/AndroidSlidingUpPanel
 
 ##Release Note
-1.Migrated to Android Studio
-2.Adding retrofit for seach function 
+1. Migrated to Android Studio
+2. Adding retrofit for seach function 
 
-##Screen shots
+##Screenshot
 <img src="https://lh4.ggpht.com/NFDU47yKTdV3_bI7NI_OzDLU_y1dFLm55hz4iAiwdbWw3U5Ex_Sx-yPf4PytBuxAdQ=h310-rw">
 <img src="https://lh4.ggpht.com/9fecZj0DwLIqKBCNt0lRzUEWpJjWdTLBSxsA2Yb00vbHGdTc1nRuJN_qQNLDeC_r1A=h310-rw">
 
