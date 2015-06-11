@@ -2,25 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/classes.jar"
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/freemarker.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-eeffaf7530d7b86092f0bba83582016b74e5728c.jar" />
+        sha1="5ad6bea46b5af666d88c260c8acc6a03408723c8">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/freemarker-8a9bc28ce46320d81a18fa7704ba249e2ca7ff5e.jar" />
     </item>
     <item
-        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/mail.jar"
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="428e267abff0d10802ccde86b915da2c20471160">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/mail-a34f53e4319e466cda54498d33c34edff946c813.jar" />
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-7f902a1fc0a0d1fea65c798572b797e5c6e0800e.jar" />
     </item>
     <item
-        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/activation.jar"
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/activation-8d6bdd8b1d78e6ef82e945996d233bea9005360d.jar" />
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-9929ca3cac9c0a0c153a0338ecd05ff0b1af4120.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-65f65e9ae9a974451a2923e7d4eaa7604993c658.jar" />
     </item>
     <item
         jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/greenDAO-generator.jar"
@@ -30,25 +37,18 @@
         <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/greenDAO-generator-54a91db7f1cf619ae90b59722792307caa10eb25.jar" />
     </item>
     <item
-        jar="/Users/nevin/Desktop/ADT/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-744b39e5a0db3e522ee62ad082334aa8e34ed3d7.jar" />
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-75ed84c9b7d57c32f182278a898a0f6849c84eba.jar" />
     </item>
     <item
-        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/greendao-1.3.0-beta-1.jar"
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="185a8ff3f50dbd99e5238d6d411ee86dd87d2b0a">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/greendao-1.3.0-beta-1-c3bb4123bef34c7e58011409466ea4c3cbbff112.jar" />
-    </item>
-    <item
-        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/nineoldandroids-2.4.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-0decfc64c133ca93bbdf1728c11cd3d1f50c2dc0.jar" />
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-bb548ba994d1f65c9fd83a2d6015de5a5289ae9a.jar" />
     </item>
     <item
         jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/sdk-v1.0.0.jar"
@@ -58,39 +58,88 @@
         <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/sdk-v1.0.0-60ef212e8728e200000c3e232212960dbfa2f861.jar" />
     </item>
     <item
-        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/libs/internal_impl-21.0.0.jar"
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/activation.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-5fae7549ddf0e62f3457bc2d2f01662f6befcf9f.jar" />
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/activation-8d6bdd8b1d78e6ef82e945996d233bea9005360d.jar" />
     </item>
     <item
-        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/jars/classes.jar"
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-94536bd135579556a9cef1300bf85aae5bd97b7d.jar" />
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-0b578c95f4f02769306a4c75732c0d23ca6a9405.jar" />
     </item>
     <item
-        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/freemarker.jar"
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="5ad6bea46b5af666d88c260c8acc6a03408723c8">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/freemarker-8a9bc28ce46320d81a18fa7704ba249e2ca7ff5e.jar" />
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-d4ccbd41f7920efe3273401f75c936f5a493b4b5.jar" />
     </item>
     <item
-        jar="/Users/nevin/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/gson-2.3.1-ea2ff7e13b1c0d1e8cc5d82cdbb1bbe31c4d62f0.jar" />
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-804a996573db7fdf58e450e9710e2d1599e66525.jar" />
     </item>
     <item
-        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/gesture-v1.0.1.jar"
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="d85a5bd9ca0a02146d343bd1400ba7fd0750ec09">
-        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/gesture-v1.0.1-03ff6c162f76e471820bf87a4ae37e34c22944c9.jar" />
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-de6a1552946e96a9cf2389ffc7375a57305e4789.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-cdf574f6b36fc6567f6c726c2f12336fe63e75d4.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-fdb3f773d212fc20d49d032632715fc36a980ab0.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-39a67deaa4b2e4c3a41fbcb61dda1c2bbc770464.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-790a9bfe9e41c8eb6836d4a6b579702eb02d0804.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-dba98bcfb8df1b7a8dab282e49e8275b08000fb5.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/nineoldandroids-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-0decfc64c133ca93bbdf1728c11cd3d1f50c2dc0.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-9c95922212723ef6b88804abc299ebcc110367db.jar" />
     </item>
     <item
         jar="/Users/nevin/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.9.0/a681c044244d9fc375198588297a39ba78028423/retrofit-1.9.0.jar"
@@ -100,11 +149,116 @@
         <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/retrofit-1.9.0-cf61cbf56552dbdb78530c6637f834fab919459a.jar" />
     </item>
     <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-500a68aaa2296b5b4915054c572cb7e31ed339d3.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-2caf08e82df1c3a325a3acd7329ff5433af8646f.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-f4135e61b41a0067510ceea9666335a7421d65c5.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-8cb5bca080902f3263bc6e779a295bf2718077ac.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-a20bed8ad4e864cc8e5e43e46a0c6fb03215fd2a.jar" />
+    </item>
+    <item
         jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/additionnal.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
         <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/additionnal-3b5d08ddfe233ca38b74773ff90f2ac740e15c97.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Desktop/ADT/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-b99409a755281aba1af5827d1d1371f9c6cfde04.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/gesture-v1.0.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d85a5bd9ca0a02146d343bd1400ba7fd0750ec09">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/gesture-v1.0.1-03ff6c162f76e471820bf87a4ae37e34c22944c9.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/mail.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/mail-a34f53e4319e466cda54498d33c34edff946c813.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-fe62734fffd129e6597fa290939c962d9c4064bd.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-b6dbf942d21d27f9751707d0415ec0729fd0d5a6.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-41982c3fd9388904ff85bca375f2c9506184b45c.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-8004738eeb02258f4701fc8b9987e622124857d8.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/classes-2b78b380b16b38b8b4393e93dff90cd57cc9e6bd.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/gson-2.3.1-ea2ff7e13b1c0d1e8cc5d82cdbb1bbe31c4d62f0.jar" />
+    </item>
+    <item
+        jar="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/libs/greendao-1.3.0-beta-1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="185a8ff3f50dbd99e5238d6d411ee86dd87d2b0a">
+        <dex dex="/Users/nevin/Documents/AndroidStudioProjects/yummy-android/app/build/intermediates/pre-dexed/debug/greendao-1.3.0-beta-1-c3bb4123bef34c7e58011409466ea4c3cbbff112.jar" />
     </item>
 
 </items>

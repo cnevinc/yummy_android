@@ -20,14 +20,22 @@ import com.android.volley.VolleyError;
 import com.android.volley.Request.Method;
 import com.android.volley.util.JsonArrayRequest;
 import com.android.volley.util.JsonObjectRequest;
-import com.cgearc.yummy.DaoMaster.DevOpenHelper;
+import com.cgearc.yummy.dao.DaoMaster;
+import com.cgearc.yummy.dao.DaoMaster.DevOpenHelper;
 import com.cgearc.yummy.Frg_RecipeList.ArticleAdapter;
 import com.cgearc.yummy.api.search.ApiArticle;
 import com.cgearc.yummy.api.search.ApiSearchResult;
+import com.cgearc.yummy.dao.Article;
+import com.cgearc.yummy.dao.ArticleDao;
+import com.cgearc.yummy.dao.DaoSession;
+import com.cgearc.yummy.dao.Favorite;
+import com.cgearc.yummy.dao.FavoriteDao;
+import com.cgearc.yummy.dao.Picture;
+import com.cgearc.yummy.utils.MyVolley;
+import com.cgearc.yummy.utils.Setting;
 
 import retrofit.RestAdapter;
 import retrofit.http.GET;
-import retrofit.http.Query;
 import retrofit.http.QueryMap;
 
 public class SyncManager {
