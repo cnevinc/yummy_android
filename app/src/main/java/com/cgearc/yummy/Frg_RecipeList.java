@@ -5,8 +5,17 @@ import java.util.Collections;
 import java.util.List;
 
 import com.android.volley.util.NetworkImageView;
-import com.cgearc.yummy.DaoMaster.DevOpenHelper;
+import com.cgearc.yummy.dao.DaoMaster;
+import com.cgearc.yummy.dao.DaoMaster.DevOpenHelper;
 import com.cgearc.yummy.SyncManager.SyncObserver;
+import com.cgearc.yummy.dao.Article;
+import com.cgearc.yummy.dao.ArticleDao;
+import com.cgearc.yummy.dao.DaoSession;
+import com.cgearc.yummy.dao.Favorite;
+import com.cgearc.yummy.dao.FavoriteDao;
+import com.cgearc.yummy.utils.MyApplication;
+import com.cgearc.yummy.utils.MyVolley;
+import com.cgearc.yummy.utils.Setting;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
@@ -35,7 +44,7 @@ import android.widget.Toast;
 /**
  * Fragment that appears in the "content_frame", shows a planet
  */
-public  class Frg_RecipeList extends BaseFragment implements OnItemClickListener, OnItemLongClickListener {
+public  class Frg_RecipeList extends Frg_Base implements OnItemClickListener, OnItemLongClickListener {
     public static final String ARG_PLANET_NUMBER = "planet_number";
 	private static final String TAG = "nevin";
 	private ProgressBar mProgressBar; 
@@ -99,7 +108,7 @@ public  class Frg_RecipeList extends BaseFragment implements OnItemClickListener
         mAdapter = new ArticleAdapter(inflater, new SortedArrayList<Article>());
         mGridView.setAdapter(mAdapter);
         	
-        Setting.CURRENT_PAGE=0; // important! Set the flag to 0 
+        Setting.CURRENT_PAGE=0; // important! Set the flag to 0
         loadMoreData();
         	
         mGridView.setOnItemClickListener(this);

@@ -18,25 +18,24 @@ package com.cgearc.yummy;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import com.android.volley.RequestQueue;
 import com.cgearc.yummy.Frg_RecipeList.RecipeClickedListener;
 import com.cgearc.yummy.Frg_RecipeList.SearchCompletedListener;
 import com.cgearc.yummy.SlidingUpPanelLayout.PanelSlideListener;
+import com.cgearc.yummy.utils.MyApplication;
+import com.cgearc.yummy.utils.MyVolley;
+import com.cgearc.yummy.utils.Setting;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-import com.nineoldandroids.view.animation.AnimatorProxy;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.DownloadManager.Request;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -50,11 +49,8 @@ import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -62,20 +58,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.View.OnClickListener;
-import android.view.animation.ScaleAnimation;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
- 
+
 public class Act_Main extends Activity implements SearchCompletedListener,
 		RecipeClickedListener {
 	private static String TAG = "nevin";
@@ -177,7 +167,7 @@ public class Act_Main extends Activity implements SearchCompletedListener,
 			@Override
 			public void onDrawerSlide(View drawerView, float slideOffset) {
 
-				BaseFragment fragment = (BaseFragment) Act_Main.this
+				Frg_Base fragment = (Frg_Base) Act_Main.this
 						.getFragmentManager().findFragmentById(
 								R.id.content_frame);
 
