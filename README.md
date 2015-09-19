@@ -1,4 +1,4 @@
-# Yummy - find recipe easily
+# Yummy - find recipe easily  <img src="https://travis-ci.org/cnevinc/yummy_android.svg?branch=master">
 A personal interest/project.
 
 ##Feature
