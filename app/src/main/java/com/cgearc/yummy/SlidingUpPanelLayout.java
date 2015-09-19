@@ -23,7 +23,7 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 
-import com.nineoldandroids.view.animation.AnimatorProxy;
+//import com.nineoldandroids.view.animation.AnimatorProxy;
 
 public class SlidingUpPanelLayout extends ViewGroup {
 
@@ -907,7 +907,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
                 mMainView.setTranslationY(mainViewOffset);
             } else {
-                AnimatorProxy.wrap(mMainView).setTranslationY(mainViewOffset);
+                //AnimatorProxy.wrap(mMainView).setTranslationY(mainViewOffset);
             }
         }
     }

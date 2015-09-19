@@ -5,20 +5,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Properties;
 
-import javax.activation.DataHandler;
-import javax.activation.FileDataSource;
-import javax.mail.BodyPart;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
+//import javax.activation.DataHandler;
+//import javax.activation.FileDataSource;
+//import javax.mail.BodyPart;
+//import javax.mail.Message;
+//import javax.mail.MessagingException;
+//import javax.mail.Multipart;
+//import javax.mail.PasswordAuthentication;
+//import javax.mail.Session;
+//import javax.mail.Transport;
+//import javax.mail.internet.AddressException;
+//import javax.mail.internet.InternetAddress;
+//import javax.mail.internet.MimeBodyPart;
+//import javax.mail.internet.MimeMessage;
+//import javax.mail.internet.MimeMultipart;
 import javax.sql.DataSource;
 
 import android.content.Context;
@@ -202,90 +202,90 @@ public class Setting implements OnSharedPreferenceChangeListener {
 	
 	
 	// email ---start---
-	public void sendMail(String to ,String subject, String messageBody, String filename) {
-		Session session = createSessionObject();
-		
-		try {
-			Message message = createMessage(to, subject,
-					messageBody, session, filename);
-			new SendMailTask().execute(message);
-			Log.d(Setting.TAG, "send to " + to + "\nsubject:" +  subject + "\ntext: \n"
-					+ messageBody);
-		} catch (AddressException e) {
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-	}
-
-	private class SendMailTask extends AsyncTask<Message, Void, Void> {
-
-		@Override
-		public void onPreExecute() {
-			super.onPreExecute();
-		}
-
-		@Override
-		public void onPostExecute(Void aVoid) {
-			super.onPostExecute(aVoid);
-			Log.d(Setting.TAG, "SendMailTask complete");
-		}
-
-		@Override
-		public Void doInBackground(Message... messages) {
-			try {
-				Log.i(Setting.TAG, "SendMailTask doInBackground");
-				Transport.send(messages[0]);
-			} catch (MessagingException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-	}
-
-	private Message createMessage(String email, String subject,
-			String messageBody, javax.mail.Session session, String filename)
-			throws MessagingException, UnsupportedEncodingException {
-		MimeMessage message = new MimeMessage(session);
-		message.setFrom(new InternetAddress(Setting.SERVICE_MAIL_ACCOUNT, "Yummy Admin"));
-		message.addRecipient(Message.RecipientType.TO, new InternetAddress(
-				email, email));
-		message.setSubject(subject);
-
-		
-		if (filename != null) {
-			BodyPart messageBodyPart = new MimeBodyPart();
-			messageBodyPart.setText(messageBody);
-			Multipart multipart = new MimeMultipart();
-			multipart.addBodyPart(messageBodyPart);
-			messageBodyPart = new MimeBodyPart();
-			DataSource source = (DataSource) new FileDataSource(filename);
-			messageBodyPart.setDataHandler(new DataHandler((javax.activation.DataSource) source));
-			messageBodyPart.setFileName(filename);
-			multipart.addBodyPart(messageBodyPart);
-			message.setContent(multipart);
-		}else{
-			message.setText(messageBody);
-		}
-
-		return message;
-	}
-
-	private Session createSessionObject() {
-		Properties properties = new Properties();
-		properties.put("mail.smtp.auth", "true");
-		properties.put("mail.smtp.starttls.enable", "true");
-		properties.put("mail.smtp.host", "smtp.gmail.com");
-		properties.put("mail.smtp.port", "587");
-
-		return Session.getInstance(properties, new javax.mail.Authenticator() {
-			public PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(Setting.SERVICE_MAIL_ACCOUNT, Setting.SERVICE_MAIL_PASSWORD);
-			}
-		});
-	}
+//	public void sendMail(String to ,String subject, String messageBody, String filename) {
+//		Session session = createSessionObject();
+//
+//		try {
+//			Message message = createMessage(to, subject,
+//					messageBody, session, filename);
+//			new SendMailTask().execute(message);
+//			Log.d(Setting.TAG, "send to " + to + "\nsubject:" +  subject + "\ntext: \n"
+//					+ messageBody);
+//		} catch (AddressException e) {
+//			e.printStackTrace();
+//		} catch (MessagingException e) {
+//			e.printStackTrace();
+//		} catch (UnsupportedEncodingException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	private class SendMailTask extends AsyncTask<Message, Void, Void> {
+//
+//		@Override
+//		public void onPreExecute() {
+//			super.onPreExecute();
+//		}
+//
+//		@Override
+//		public void onPostExecute(Void aVoid) {
+//			super.onPostExecute(aVoid);
+//			Log.d(Setting.TAG, "SendMailTask complete");
+//		}
+//
+//		@Override
+//		public Void doInBackground(Message... messages) {
+//			try {
+//				Log.i(Setting.TAG, "SendMailTask doInBackground");
+//				Transport.send(messages[0]);
+//			} catch (MessagingException e) {
+//				e.printStackTrace();
+//			}
+//			return null;
+//		}
+//	}
+//
+//	private Message createMessage(String email, String subject,
+//			String messageBody, javax.mail.Session session, String filename)
+//			throws MessagingException, UnsupportedEncodingException {
+//		MimeMessage message = new MimeMessage(session);
+//		message.setFrom(new InternetAddress(Setting.SERVICE_MAIL_ACCOUNT, "Yummy Admin"));
+//		message.addRecipient(Message.RecipientType.TO, new InternetAddress(
+//				email, email));
+//		message.setSubject(subject);
+//
+//
+//		if (filename != null) {
+//			BodyPart messageBodyPart = new MimeBodyPart();
+//			messageBodyPart.setText(messageBody);
+//			Multipart multipart = new MimeMultipart();
+//			multipart.addBodyPart(messageBodyPart);
+//			messageBodyPart = new MimeBodyPart();
+//			DataSource source = (DataSource) new FileDataSource(filename);
+//			messageBodyPart.setDataHandler(new DataHandler((javax.activation.DataSource) source));
+//			messageBodyPart.setFileName(filename);
+//			multipart.addBodyPart(messageBodyPart);
+//			message.setContent(multipart);
+//		}else{
+//			message.setText(messageBody);
+//		}
+//
+//		return message;
+//	}
+//
+//	private Session createSessionObject() {
+//		Properties properties = new Properties();
+//		properties.put("mail.smtp.auth", "true");
+//		properties.put("mail.smtp.starttls.enable", "true");
+//		properties.put("mail.smtp.host", "smtp.gmail.com");
+//		properties.put("mail.smtp.port", "587");
+//
+//		return Session.getInstance(properties, new javax.mail.Authenticator() {
+//			public PasswordAuthentication getPasswordAuthentication() {
+//				return new PasswordAuthentication(Setting.SERVICE_MAIL_ACCOUNT, Setting.SERVICE_MAIL_PASSWORD);
+//			}
+//		});
+//	}
 	
 	// email ----end----
 

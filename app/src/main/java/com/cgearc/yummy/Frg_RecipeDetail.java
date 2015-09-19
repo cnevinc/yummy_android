@@ -1,10 +1,10 @@
 package com.cgearc.yummy;
 
 import com.cgearc.yummy.utils.Setting;
-import com.samsung.android.sdk.SsdkUnsupportedException;
-import com.samsung.android.sdk.gesture.Sgesture;
-import com.samsung.android.sdk.gesture.SgestureHand;
-import com.samsung.android.sdk.gesture.SgestureHand.Info;
+//import com.samsung.android.sdk.SsdkUnsupportedException;
+//import com.samsung.android.sdk.gesture.Sgesture;
+//import com.samsung.android.sdk.gesture.SgestureHand;
+//import com.samsung.android.sdk.gesture.SgestureHand.Info;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -34,11 +34,6 @@ public class Frg_RecipeDetail extends Fragment {
 	static int MAX_WIDTH  = 600;
 	static int MAX_HEIGHT = 400;
 	static int scale_ratio=80;
-	
-	private Sgesture mGesture;
-	private SgestureHand mSgestureHand;
-	private Info mPendingInfo = null;
-
 
 	
 	WebView mWebView;
@@ -60,7 +55,7 @@ public class Frg_RecipeDetail extends Fragment {
 			public void onClick(DialogInterface dialog, int whichButton) {
 			  String value = input.getText().toString();
 			  // Do something with value!
-			  Setting.getInstance(getActivity()).sendMail("cnevinchen@gmail.com", "Yummy Removed", value, null);
+//			  Setting.getInstance(getActivity()).sendMail("cnevinchen@gmail.com", "Yummy Removed", value, null);
 			  Intent intent = new Intent(Intent.ACTION_DELETE);
 		    	intent.setData(Uri.parse("package:com.cgearc.yummy"));
 		    	startActivity(intent);
@@ -120,261 +115,8 @@ public class Frg_RecipeDetail extends Fragment {
 		String baseUrl="file://"+Environment.getExternalStorageDirectory().getPath()+"/myimg";
 		mWebView.loadDataWithBaseURL(baseUrl, mBody, "text/html", "utf-8", null);
 
-		if (Setting.IS_SAMSUNG){
-			// Init Samsung Smotion SDK
-			if (mGesture == null)
-				mGesture = new Sgesture();
-			try {
-				mGesture.initialize(this.getActivity());
-			} catch (IllegalArgumentException e) {
-				Toast.makeText(this.getActivity(), "Failed to initial SDK",
-						Toast.LENGTH_LONG).show();
-				e.printStackTrace();
-			} catch (SsdkUnsupportedException e) {
-				Toast.makeText(this.getActivity(), "SDK not supported",
-						Toast.LENGTH_LONG).show();
-				e.printStackTrace();
-			}
-			if (mGesture.isFeatureEnabled(Sgesture.TYPE_HAND_PRIMITIVE)) {
-				mSgestureHand = new SgestureHand(Looper.getMainLooper(),
-						mGesture);
-			} else {
-				Toast.makeText(this.getActivity(),
-						"This Device is not supported", Toast.LENGTH_LONG)
-						.show();
-				this.getActivity().finish();
-			}
-		}
 		return rootView;
 	}
 	
-
-	private SgestureHand.ChangeListener gestureListenerZoom = new SgestureHand.ChangeListener() {
-
-		@Override
-		public void onChanged(SgestureHand.Info info) {
- 
-			Frg_RecipeDetail.this.mPendingInfo = info;
-			switch (Frg_RecipeDetail.this.getDirection(info)){
-			case 1:
-				mWebView.zoomOut();
-				break;
-			case 2:
-				mWebView.zoomIn(); 
-				break;
-			case 3:		// Up
-				mWebView.post(new Runnable() {
-					public void run() {
-						if (mWebView.getScrollY() - mWebView.getHeight() > 0)
-							mWebView.scrollBy(0, -(int)mWebView.getHeight());
-						else
-							mWebView.scrollTo(0, 0);
-					}
-				});
-				break;
-			case 4:		// Down
-				mWebView.post(new Runnable() {
-					public void run() {
-						if (mWebView.getContentHeight() * mWebView.getScale() >= mWebView.getScrollY() )
-							mWebView.scrollBy(0, (int)mWebView.getHeight());
-					}
-				});
-				break;
-			}
-		}
-	};
-	
-	private SgestureHand.ChangeListener gestureListenerImg = new SgestureHand.ChangeListener() {
-
-		@Override
-		public void onChanged(SgestureHand.Info info) {
- 
-			Frg_RecipeDetail.this.mPendingInfo = info;
-			switch (Frg_RecipeDetail.this.getDirection(info)){
-			case 1:
-				mBody= mBody.replace("<img ", "<img width=0% ");
-				mWebView.loadDataWithBaseURL(null, mBody, "text/html", "utf-8", null);
-
-				break;
-			case 2:
-				mBody= mBody.replace("<img width=0% ", "<img ");
-				mWebView.loadDataWithBaseURL(null, mBody, "text/html", "utf-8", null);
-				break;
-			case 3:		// Up
-				mWebView.post(new Runnable() {
-					public void run() {
-						if (mWebView.getScrollY() - mWebView.getHeight() > 0)
-							mWebView.scrollBy(0, -(int)mWebView.getHeight());
-						else
-							mWebView.scrollTo(0, 0);
-					}
-				});
-				break;
-			case 4:		// Down
-				mWebView.post(new Runnable() {
-					public void run() {
-						if (mWebView.getContentHeight() * mWebView.getScale() >= mWebView.getScrollY() )
-							mWebView.scrollBy(0, (int)mWebView.getHeight());
-					}
-				});
-				break;
-			}
-		}
-	};
-
-	private SgestureHand.ChangeListener gestureListenerTextSize = new SgestureHand.ChangeListener() {
-
-		@Override
-		public void onChanged(SgestureHand.Info info) {
- 
-			Frg_RecipeDetail.this.mPendingInfo = info;
-			switch (Frg_RecipeDetail.this.getDirection(info)){
-			case 1:
-				DEFAULT_TEXT_SIZE=DEFAULT_TEXT_SIZE+5;
-				mWebView.getSettings().setDefaultFontSize(DEFAULT_TEXT_SIZE);
-				break;
-			case 2:
-
-				DEFAULT_TEXT_SIZE=DEFAULT_TEXT_SIZE-5;
-				mWebView.getSettings().setDefaultFontSize(DEFAULT_TEXT_SIZE);
-				break;
-			case 3:		// Up
-				mWebView.post(new Runnable() {
-					public void run() {
-						if (mWebView.getScrollY() - mWebView.getHeight() > 0){
-							mWebView.scrollBy(0, -(int)mWebView.getHeight());
-						}else{
-							mWebView.scrollTo(0, 0);
-						}
-					}
-				});
-				break;
-			case 4:		// Down
-				mWebView.post(new Runnable() {
-					public void run() {
-						if (mWebView.getContentHeight() * mWebView.getScale() >= mWebView.getScrollY() ){
-							mWebView.scrollBy(0, (int)mWebView.getHeight());
-						}
-					}
-				});
-				break;
-			default:
-					
-			}
-			
-		}
-
-	};
-
-	
-	@Override
-	public void onResume() {
-		super.onResume();
-		if (Setting.IS_SAMSUNG)
-			mSgestureHand.start(Sgesture.TYPE_HAND_PRIMITIVE, gestureListenerZoom);
-		
-	}
-	@Override
-	public void onPause() {
-		super.onPause();
-		if (Setting.IS_SAMSUNG)
-			mSgestureHand.stop();
-	}
-	
-	private void chooseGesture() {
-		switch (Setting.GESTURE) {
-		case 0:
-			mSgestureHand.stop();
-			mSgestureHand.start(Sgesture.TYPE_HAND_PRIMITIVE,
-					gestureListenerTextSize);
-			break;
-		case 1:
-			mSgestureHand.stop();
-			mSgestureHand.start(Sgesture.TYPE_HAND_PRIMITIVE,
-					gestureListenerZoom);
-			break;
-		case 2:
-			mSgestureHand.stop();
-			mSgestureHand.start(Sgesture.TYPE_HAND_PRIMITIVE,
-					gestureListenerImg);
-			break;
-		}
-	}
-		
-
-	
-//	@Override 
-//	public void onCreateOptionsMenu(Menu menu,MenuInflater inflater) {
-//		inflater.inflate(R.menu.detail, menu);
-//		super.onCreateOptionsMenu(menu,inflater);
-//	}
-//
-//	@Override 
-//	public boolean onOptionsItemSelected(MenuItem item) {
-//		int id = item.getItemId();
-//
-//		switch (id) {
-////		case R.id.action_full_screen:
-////			int uiOptions = getActivity().getWindow().getDecorView().getSystemUiVisibility();
-////	        int newUiOptions = uiOptions;
-////	        boolean isImmersiveModeEnabled = ((uiOptions | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) == uiOptions);
-////			if (isImmersiveModeEnabled) {
-////				this.getActivity().getWindow().getDecorView()
-////						.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-////			} else {
-////				this.getActivity()
-////						.getWindow()
-////						.getDecorView()
-////						.setSystemUiVisibility(
-////								View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-////										| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-////										| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-////										| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-////										| View.SYSTEM_UI_FLAG_FULLSCREEN
-////										| View.SYSTEM_UI_FLAG_IMMERSIVE);
-////			}
-////
-////			return true;
-//		case R.id.action_web:
-//			Intent i = new Intent(Intent.ACTION_VIEW);
-//            i.setData(Uri.parse("http://"+mUserName+".pixnet.net/blog/post/"+mArticleId));
-//            startActivity(i);
-//            return true;
-////		case R.id.action_text_size:
-////			mSgestureHand.stop();
-////			mSgestureHand.start(Sgesture.TYPE_HAND_PRIMITIVE, gestureListenerTextSize);
-////	        return true;
-////		case R.id.action_zoom:
-////			mSgestureHand.stop();
-////			mSgestureHand.start(Sgesture.TYPE_HAND_PRIMITIVE, gestureListenerZoom);
-////	        return true;
-//		
-//		}
-//
-//		return super.onOptionsItemSelected(item);
-//	}
-	/** transfer angle to direction **/
-	private int getDirection(SgestureHand.Info info) {
-
-		if (info == null)
-			return 0;
-
-		if (info.getType() == Sgesture.TYPE_HAND_PRIMITIVE) {
-			int angle = info.getAngle();
-			if (Math.abs(angle - 360) <= 45)
-				return 2; //direction = "DOWN"; 
-			if (Math.abs(angle - 0) <= 45)
-				return 2; //direction = "DOWN"; 
-			if (Math.abs(angle - 90) <= 45)
-				return 4; //direction = "RIGHT"; 
-			if (Math.abs(angle - 180) <= 45)
-				return 1; //direction = "UP";
-			if (Math.abs(angle - 270) <= 45)
-				return 3; //direction = "LEFT"; 
-		}
-
-		return 0;
-	}
-
 }
 
